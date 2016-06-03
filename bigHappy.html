@@ -1,0 +1,221 @@
+<html  lang="zh" style="overflow:hidden">
+<head>
+	<title>企业年会大联欢</title>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	
+	<link href="resource/css/bigStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="public bigHappy">
+	<div class="bigHappyTit">
+		<div class="bigHappyTitInner">
+			<h1></h1>
+			<span>企业年会大联欢</span>
+			<img src="resource/images/code.jpg"/>
+		</div>
+	</div>
+	<div class="publicCon bigHappyCon clear" id="bigHappyCon">
+		<ul>
+			<li class="clearfix">
+				<img src="resource/images/photo.jpg" class="headPic"/>
+				<div class="listText">
+					<h3>Ben</h3>
+					<p>经中央军</p>
+				</div>
+				<span><b>89</b>楼</span>
+			</li>
+			<li>
+				<img src="resource/images/photo.jpg" class="headPic"/>
+				<div class="listText">
+					<h3>Ben</h3>
+					<p>蛮有意思的～！@＃¥％……</p>
+				</div>
+				<span><b>89</b>楼</span>
+			</li>
+			<li>
+				<img src="resource/images/photo.jpg" class="headPic"/>
+				<div class="listText">
+					<h3>Ben</h3>
+					<p>意意意意意意意意意意意</p>
+				</div>
+				<span><b>89</b>楼</span>
+			</li>
+		
+		</ul>
+	</div>
+
+</div>
+<div class="footer">
+	主办单位：中企动力科技有限公司
+</div>
+<div class="Rightbar">
+	<span><b></b></span>
+	<ul>
+		<li> 
+			<a href="bigHappy.html">
+				<i class="icon iconfont" style="color:#fff">&#xe62a;</i>
+				<b style="color:#fff">消息</b>
+			</a>
+		</li>
+		<li>
+			<a href="shake_count.html">
+				<i class="icon iconfont">&#xe65b;</i>
+				<b>摇一摇</b>
+			</a>
+		</li>
+		<li>
+			<a href="Startlottery.html">
+				<i class="icon iconfont">&#xe63d;</i>
+				<b>抽奖</b>
+			</a>	
+		</li>
+		<li>
+			<a href="sign.html">
+				<i class="icon iconfont">&#xe63f;</i>
+				<b>签到</b>
+			</a>
+		</li>
+	</ul>
+</div>
+</body>
+<script src="/Statics/common/js/jquery.js"></script>
+<script>
+// ;(function(win,doc){
+// 	function change(){
+// 		document.documentElement.style.fontSize=document.documentElement.clientWidth/1922*20+'px';	
+// 	}
+// 	win.addEventListener('resize',change,false);
+// 	win.addEventListener('DOMContentLoaded',change,false);
+// })(window,document);
+window.addEventListener('DOMContentLoaded',function(){
+	var timer=null;
+	var count=3;  //设置倒计时的总时间
+	var bigHappyCon=$("#bigHappyCon ul");
+	/*设置文本*/
+	var str='<li class="clearfix">'
+				+'<img src="resource/images/photo.jpg" class="headPic"/>'
+				+'<div class="listText">'
+				+	'<h3>Ben</h3>'
+				+	'<p>蛮有意思的蛮有意思意sfsfsd</p>'
+				+'</div>'
+				+'<span><b>89</b>楼</span>'
+			'</li>';
+	/*设置图片*/
+	var str2='<li class="clearfix">'
+			+'<img src="resource/images/photo.jpg" class="headPic"/>'
+			+'<div class="listText">'
+			+	'<h3>Ben</h3>'
+			+	'<img src="resource/images/star.jpg" class="activePic"/>'
+			+'</div>'
+			+'<span><b>89</b>楼</span>'
+		'</li>';
+
+	/*显示图片*/
+	// function showMeta(){
+	// 	$(".publicCon ul").prepend(str2);
+	// 	gblen($(".listText p").eq(0).text());
+	// 	setFontSize();
+	// 	var bOk=true;
+	// 	if(bOk){
+
+	// 		$("body").append('<div class="layer"><img src="resource/images/star.jpg" /></div>');
+	// 		$(".layer").fadeIn();
+	// 		var width=$(".layer img").width();
+	// 		var height=$(".layer img").height();
+	// 		$(".layer").fadeIn();
+	// 		// $(".layer").css("height",$(window).height());
+	// 		$(".layer img").css("margin-left",-width/2);
+	// 		$(".layer img").css("margin-top",-height/2);
+	// 		clearInterval(timer);
+	// 		setTimeout(function(){
+	// 			$(".layer").fadeOut();
+	// 			setTimeout(function(){
+	// 				$(".layer").remove();
+	// 			},1000)
+				
+	// 			timer=setInterval(showMeta,3000);
+	// 		},3000);
+	// 	}
+	// }
+	// timer=setInterval(showMeta,3000);
+
+	/*获取字符串长度*/
+	function gblen(str) {  
+	  var len = 0;  
+	  for (var i=0; i<str.length; i++) {  
+	    if (str.charCodeAt(i)>127 || str.charCodeAt(i)==94) {  
+	       len += 2;  
+	     } else {  
+	       len ++;  
+	     }  
+	   }  
+	  return len;  
+	}
+
+	/*判断字数，设置字体大小*/
+	function setFontSize(){
+		$(".listText p").each(function(){
+			//alert(gblen($(this).text()));
+			var str=gblen($(this).text());
+			if(str<=20){
+				$(this).css("font-size","60px");
+			}else if(str>20 && str<60){
+				$(this).css("font-size","30px");
+			}else if(str>60 && str<110){
+				$(this).css("font-size","20px");
+				
+			}else if(str>110){
+			
+				$(this).css("font-size","20px");
+				var str2=$(this).text();
+				$(this).html(str2.substring(0,60)+' ......');
+			}
+		});
+	}
+	setFontSize();
+	$(".Rightbar").animate({"right":0},500);
+	// $(".Rightbar").on("mouseenter",function(event){
+	// 	$(".Rightbar").animate({"right":0},500);
+	// 	event.stopPropagation();
+	// });
+	// $(".Rightbar").on("mouseleave",function(event){
+	// 	$(".Rightbar").animate({"right":-60},500);
+	// 	event.stopPropagation();
+	// });
+	$(".Rightbar ul li").each(function(){
+		$(this).mouseover(function(){
+			$(this).find("i").css("color","#fff");
+			$(this).find("b").css("color","#fff");
+		});
+		$(this).mouseout(function(){
+			$(this).find("i").css("color","#b7aabb");
+			$(this).find("b").css("color","#b7aabb");
+		})
+	});
+	
+},false);
+
+function screenZoom(){
+	var wallHeight = 800;
+	var screenH = document.body.clientHeight;
+
+	document.body.style.zoom = screenH/wallHeight;
+
+}
+window.onload = function(){
+	screenZoom();
+};
+window.onresize = function(){
+
+	screenZoom();
+};
+// var screenH = document.documentElement.clientHeight || document.body.clientHeight;
+	
+// window.onresize=function(){
+// 	console.log(screenH)
+// }
+</script>
+
+</html>

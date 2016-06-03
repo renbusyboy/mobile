@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>摇一摇倒计时</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/bigStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="public shake_count">
+	<div class="bigHappyTit">
+		<div class="bigHappyTitInner">
+			<h1></h1>
+			<span>企业年会大联欢</span>
+			<img src="resource/images/code.jpg"/>
+		</div>
+	</div>
+	<div class="publicCon  clear" >
+		<h3>摇一摇大比拼</h3>
+		<img src="resource/images/shake_count.png"/>
+		<a href="javascript:;" id="shake_btn">开始倒计时</a>
+	</div>
+
+	<div class="footer">
+		主办单位：中企动力科技有限公司
+	</div>
+</div>
+<div class="countNum" id="countNum">
+		1
+</div>
+<div class="Rightbar">
+	<span><b></b></span>
+	<ul>
+		<li> 
+			<a href="bigHappy.html">
+				<i class="icon iconfont" style="color:#fff">&#xe62a;</i>
+				<b style="color:#fff">消息</b>
+			</a>
+		</li>
+		<li>
+			<a href="shake_count.html">
+				<i class="icon iconfont">&#xe65b;</i>
+				<b>摇一摇</b>
+			</a>
+		</li>
+		<li>
+			<a href="Startlottery.html">
+				<i class="icon iconfont">&#xe63d;</i>
+				<b>抽奖</b>
+			</a>	
+		</li>
+		<li>
+			<a href="sign.html">
+				<i class="icon iconfont">&#xe63f;</i>
+				<b>签到</b>
+			</a>
+		</li>
+	</ul>
+</div>
+</body>
+<script src="/Statics/common/js/jquery.js"></script>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';	
+	}
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+window.addEventListener('DOMContentLoaded',function(){
+	$("#shake_btn").click(function(){
+		$(".public").hide();
+		$("body").css("backgroundImage","url(resource/images/bigC.jpg)");
+		$("body").css("width","100%");
+		$("body").css("height","100%");
+		var oCountText=document.getElementById("countNum");
+		oCountText.style.display="block";
+		var timer=null;
+		var count=3;  //设置倒计时的总时间
+		oCountText.innerHTML=count;
+		timer=setInterval(function(){
+			count--;
+			oCountText.innerHTML=count;
+			if(count==0){
+				clearInterval(timer);
+			}
+		},1000);
+	});
+
+},false);
+
+</script>
+</html>

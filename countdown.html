@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>倒计时</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="countdown">
+	<h3>倒计时</h3>
+	<div class="countbg">
+		<span id="countNum">3</span>
+	</div>
+</div>
+</body>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';
+		
+	}
+	
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+
+window.addEventListener('DOMContentLoaded',function(){
+	var timer=null;
+	var count=3;  //设置倒计时的总时间
+	var oCountText=document.getElementById("countNum");
+	oCountText.innerHTML=count;
+	timer=setInterval(function(){
+		count--;
+		oCountText.innerHTML=count;
+		if(count==0){
+			clearInterval(timer);
+		}
+	},1000);
+},false)
+</script>
+</html>

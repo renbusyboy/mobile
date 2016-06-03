@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>立即参与</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="join">
+	<div class="nostart">
+		活动暂未开始
+	</div>
+	<h3>立即参与</h3>
+</div>
+</body>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';
+		
+	}
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+
+window.addEventListener('DOMContentLoaded',function(){
+	
+},false)
+</script>
+</html>

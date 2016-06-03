@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>名次</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="rank">
+	<h3>共摇动<span>130</span>次</h3>
+	<h4>排名</h4>
+	<div class="rankbox">
+			1
+	</div>
+</div>
+</body>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';
+		
+	}
+	
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+
+window.addEventListener('DOMContentLoaded',function(){
+	
+},false)
+</script>
+</html>

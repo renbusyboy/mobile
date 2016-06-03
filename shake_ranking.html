@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>摇一摇排行榜</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/bigStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="public shake_ranking">
+	<div class="bigHappyTit">
+		<div class="bigHappyTitInner">
+			<h1></h1>
+			<span>企业年会大联欢</span>
+			<img src="resource/images/code.jpg"/>
+		</div>
+	</div>
+	<div class="publicCon  clear" >
+		<h5><b></b>剩余时间：<span>60</span>秒</h5>
+		<ul>
+			<li>
+				<div class="photo">
+					<img src="resource/images/photo.jpg"/>
+					Ben
+				</div>
+				<div class="column">3</div>
+			</li>
+			<li>
+				<div class="photo">
+					<img src="resource/images/photo.jpg"/>
+					Ben
+				</div>
+				<div class="column">3</div>
+			</li>
+			<li>
+				<div class="photo">
+					<img src="resource/images/photo.jpg"/>
+					Ben
+				</div>
+				<div class="column">3</div>
+			</li>
+			<li>
+				<div class="photo">
+					<img src="resource/images/photo.jpg"/>
+					Ben
+				</div>
+				<div class="column">3</div>
+			</li>
+			<li>
+				<div class="photo">
+					<img src="resource/images/photo.jpg"/>
+					Ben
+				</div>
+				<div class="column">3</div>
+			</li>
+		</ul>
+	</div>
+	<div class="footer">
+		主办单位：中企动力科技有限公司
+	</div>
+</div>
+
+</body>
+<script src="/Statics/common/js/jquery.js"></script>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';	
+	}
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+window.addEventListener('DOMContentLoaded',function(){
+	$("#shake_btn").click(function(){
+		$(".public").hide();
+		$("body").css("backgroundImage","url(resource/images/bigC.jpg)");
+		$("body").css("width","100%");
+		$("body").css("height","100%");
+		var oCountText=document.getElementById("countNum");
+		oCountText.style.display="block";
+		var timer=null;
+		var count=3;  //设置倒计时的总时间
+		oCountText.innerHTML=count;
+		timer=setInterval(function(){
+			count--;
+			oCountText.innerHTML=count;
+			if(count==0){
+				clearInterval(timer);
+			}
+		},1000);
+	});
+
+},false);
+
+</script>
+</html>

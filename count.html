@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>未参与摇一摇</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link href="resource/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="count">
+	<img src="resource/images/photo.jpg"/>
+	<h3>Ben</h3>
+	<div class="layer" style="display:none">
+		<div class="layerInner">
+			<ul>
+				<li><span></span>第一轮：摇动<i>130</i>次，排行：<em>1</em></li>
+				<li><span></span>第一轮：摇动<i>130</i>次，排行：<em>1</em></li>
+				<li><span></span>第一轮：摇动<i>130</i>次，排行：<em>1</em></li>		
+			</ul>
+		</div>
+	</div>
+	<div class="layer layer2">
+		<div class="layerInner layerInner2">
+			您还未参加现场摇一摇
+		</div>
+	</div>
+</div>
+</body>
+<script>
+;(function(win,doc){
+	function change(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/720*20+'px';
+	}
+	win.addEventListener('resize',change,false);
+	win.addEventListener('DOMContentLoaded',change,false);
+})(window,document);
+
+window.addEventListener('DOMContentLoaded',function(){
+	
+},false)
+</script>
+</html>
